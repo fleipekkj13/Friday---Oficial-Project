@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="text/javascript">
+        var intervalId = window.setInterval(function(){
+            // call your function here
+            var wnd = window.innerWidth;
+            var hght = window.innerHeight;
+            function resize(){
+                if(wnd < 1530 || hght < 876){
+                    window.resizeTo(1240,740)
+                }
+            }
+            resize()
+        }, 1);
+    </script>
+    <script type="text/javascript">
+        function myFunc(){
+        var mail = document.getElementById("mail").value
+        var pass = document.getElementById("pass")
+        if(mail == "felipe" || pass=="aparecida"){
+            eel.main_window()
+            window.close()
+        }else{
+            var mySp = document.getElementById("myspan")
+            if(mySp.style.display == "none"){
+                mySp.style.display = "block"
+            }
+            if(pass.classList == "passe"){
+                pass.classList.remove("passe")
+                pass.classList.add("passd")
+            }else{
+                pass.classList.remove("passd")
+                pass.classList.add("passe")
+            }
+            
+        }   
+        }
+    </script>
+    <title>Sexta-Feira Login</title>
+</head>
+<body>
+    <div class="main_content">
+        <div class="left-window">
+            <div class="explic">
+                <h1>Friday IA</h1>
+                <p>MADE BY</p>
+                <p>Felipe Liandro-From CodeForm</p>
+            </div>
+            <div class="log-code"></div>
+        </div>
+        <div class="background-images">
+        </div>
+            <main>
+                <h1>Login</h1>
+                <span class="outline"></span>
+                <ul>
+                    
+                    <input type="text" name="" id="mail" placeholder="Insira seu Email" value="">
+                    
+                    <input class="passe" type="password" name="" id="pass" placeholder="Insira sua Senha!" value="">
+                    
+                    <span id="myspan" style="display: none;">*Email ou senha Incorretos*</span>
+                    
+                </ul>
+                <button onclick="myFunc()">Entrar</button>
+            </main>
+    </div>
+</body>
+</html>

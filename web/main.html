@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="/eel.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style_app.css">
+    <script>
+
+        function showMe(){
+            var elem = document.getElementById("show_contents")
+            var foo = window.getComputedStyle(elem,null)
+            if (foo.getPropertyValue("display") == "none"){
+                elem.style.display = "block"
+            }
+        }
+
+        function return_fw(){
+            var elem = document.getElementById("show_contents")
+            var foo = window.getComputedStyle(elem,null)
+            if (foo.getPropertyValue("display") == "block"){
+                elem.style.display = "none"
+            }
+        }
+
+        
+
+    </script>
+    <script>
+        function updateClock(){
+            const d = new Date();
+            let hour = d.getHours();
+            let minute = d.getMinutes()
+            if(hour <10){
+                var hour2 = "0"+hour;
+                document.getElementById("hours").innerHTML = hour2 + ":" + minute;
+            }else{
+                document.getElementById("hours").innerHTML = hour + ":" + minute;
+            }
+            if(minute<10){
+                var hour2 = "0"+hour;
+                document.getElementById("hours").innerHTML = hour2 + ":" + minute;
+            }else{
+                document.getElementById("hours").innerHTML = hour + ":" + minute;
+            }
+
+        }
+
+    </script>
+    
+    <link rel="stylesheet" href="styled.css">
+    <title>Friday</title>
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+    <header>
+        <ul class="header-itens">
+            <div class="logo"></div>
+            <h1>Friday-IA</h1>
+            <span class="material-symbols-outlined">
+                more_vert
+                </span>
+        </ul>
+    </header>
+    <div class="show-notf">
+        <button onclick="showMe()">
+            Atualizações
+        </button>
+        <span id="hours">Horas</span>
+    </div>
+    <main>
+        <div class="friday-att" id="show_contents">
+            <div class="cotent-1">
+                <img class="logo-d" alt="">
+                <span class="texts">
+                    <h1>Novos Controles de Áudio</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, natus officia? Eveniet quaerat deserunt expedita quae ut suscipit magni accusantium eaque libero, nobis voluptas fugiat aperiam dolores quos praesentium id.</p>
+                </span>
+            </div>
+            <div class="cotent-2">
+                <img class="logo-e" alt="">
+                <span class="texts">
+                    <h1>Interface Atualizada</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus.</p>
+                </span>
+            </div>
+            <div class="cotent-3">
+                <img class="logo-x" alt="">
+                <span class="texts">
+                    <h1>Banco de Dados modificado</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus explicabo harum vero minima voluptate repellat cum sequi ad pariatur non!</p>
+                </span>
+            </div>
+            <button class="d_button" onclick="return_fw()">Voltar</button>
+        </div>
+        <div class="testing"></div>
+    </main>
+    <footer></footer>
+
+</body>
+</html>
